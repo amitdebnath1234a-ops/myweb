@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Evo Goku</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+body {
+  overflow: hidden;
+  color: white;
+  text-align: center;
+}
+
+/* 🎬 Background Video */
+video {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Content */
+.container {
+  position: relative;
+  top: 40%;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+p {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+/* Button */
+button {
+  padding: 12px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background: gold;
+  cursor: pointer;
+}
+
+/* 💰 Money Rain */
+.money {
+  position: absolute;
+  top: -50px;
+  font-size: 24px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎬 VIDEO BACKGROUND -->
+<video autoplay muted loop>
+  <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4">
+</video>
+
+<div class="container">
+  <h1>🔥 Evo Goku 😎</h1>
+  <p>Welcome to my PRO website 💸</p>
+  <button onclick="power()">Click Me</button>
+</div>
+
+<script>
+// Button action
+function power() {
+  alert("💥 Ultra Instinct Activated!");
+}
+
+// 💰 Money Rain
+for (let i = 0; i < 30; i++) {
+  let m = document.createElement("div");
+  m.className = "money";
+  m.innerHTML = "💸";
+  m.style.left = Math.random() * 100 + "vw";
+  m.style.animationDuration = (Math.random() * 3 + 2) + "s";
+  document.body.appendChild(m);
+}
+</script>
+
+</body>
+</html>
